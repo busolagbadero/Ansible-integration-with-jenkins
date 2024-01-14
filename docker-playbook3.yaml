@@ -1,0 +1,61 @@
+---
+- name: Install Docker
+  hosts: tag_Name_ansible_remote
+  become: True
+  tasks:
+    - name: install docker
+      apt:
+        name: docker.io
+        update_cache: yes
+        state: present
+
+    - name: install docker-compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-{{lookup('pipe', 'uname -m')}}
+        dest: /usr/local/bin/docker-compose
+        mode: +x
+
+    - name: start docker
+      service:
+       name: docker
+       state: started
+
+    - name: add Docker to group
+      user:
+       name: ubuntu
+       groups: docker
+       append: yes
+
+    - name: Restart server for changes to take effect
+      meta: reset_connection
+
+    - name: Update urllib3 to a compatible version
+      pip:
+       name: urllib3==1.26.7  # Use a version compatible with your OpenSSL
+       state: present
+
+    - name: install python module for docker
+      pip:
+       name:
+        - docker
+        - docker-compose
+
+- name: start docker containers
+  hosts: tag_Name_ansible_remote
+  vars_files:
+    - project-vars
+
+  tasks:
+    - name: copy to ubuntu server
+      copy:
+        src: /home/ubuntu/dockercompose.yaml
+        dest: /home/ubuntu/docker-compose.yaml
+
+    - name: Docker login
+      docker_login:
+        registry_url: https://index.docker.io/v1/
+        username: gbaderobusola
+        password: "{{password}}"
+
+    
+
