@@ -34,3 +34,15 @@ The Jenkinsfile executes the Ansible playbook named docker-playbook3.yaml. Updat
 
 Trigger the Jenkins pipeline, and it will execute the defined stage to run the Ansible playbook on the specified Ansible server.
 
+![ans3](https://github.com/busolagbadero/Integration-of-Ansible-Playbooks-with-Jenkins/assets/94229949/78e6660f-e5d1-4642-9a5d-6803da1be05c)
+
+![ans4](https://github.com/busolagbadero/Integration-of-Ansible-Playbooks-with-Jenkins/assets/94229949/6fd376d2-57e5-4ebd-bd0f-1045f16e7c6c)
+
+![ans5](https://github.com/busolagbadero/Integration-of-Ansible-Playbooks-with-Jenkins/assets/94229949/abfeef07-d0f2-4be1-97ff-d585efcaed77)
+
+![ans6](https://github.com/busolagbadero/Integration-of-Ansible-Playbooks-with-Jenkins/assets/94229949/3c511552-6196-48a1-8f99-ddec2566ad78)
+
+## Additional Notes
+The inclusion of the ansible.sh script is optional and can be removed if Ansible and its dependencies are already installed on the target server.
+
+
