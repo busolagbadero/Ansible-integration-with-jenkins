@@ -1,5 +1,5 @@
 # Integration-of-Ansible-Playbooks-with-Jenkins
-This guide outlines the process of integrating Ansible with Jenkins using a Jenkinsfile. The Jenkins pipeline defined in the Jenkinsfile automates the execution of an Ansible playbook to configure EC2 instances. This integration allows for streamlined and automated infrastructure provisioning and configuration.
+This guide outlines the process of integrating Ansible with Jenkins using a Jenkinsfile. The Jenkins pipeline defined in the Jenkinsfile automates the execution of an Ansible playbook to configure EC2 instances. This integration allows for streamlined and automated infrastructure configuration.
 
 ## Prerequisites
 Before proceeding with the integration, ensure the following prerequisites are met:
