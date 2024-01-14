@@ -15,6 +15,7 @@ pipeline{
                 withCredentials([sshUserPrivateKey(credentialsId: 'eks-pem-ubuntu', keyFileVariable: 'keyfile', passphraseVariable: '', usernameVariable: 'user')]) {
                    remote.user = user
                    remote.identityFile = keyfile
+                  //  sshScript remote: remote, script: "ansible.sh"
                    sshCommand remote: remote, command: "ansible-playbook docker-playbook3.yaml"
                 }
               }
