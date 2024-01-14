@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-      ANSIBLE = 18.188.164.143
+      ANSIBLE = "18.188.164.143"
     }
     stages {
         stage ("execute playbook") {
